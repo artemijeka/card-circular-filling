@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Позиционное круговое заполнение карточки цветом | Positional circular filling of the card with color</title>
+ <link rel="stylesheet" href="./style.min.css">
+</head>
+
+<body>
+
+ <main>
+
+  <section>
+
+   <div class="container">
+
+    <figure class="card">
+     <span class="card__circle-filling"></span>
+     <div class="card__img-box">
+      <img src="./img/img1.jpg" alt="" class="card__img">
+     </div>
+     <figcaption class="card__content">
+      <h2 class="card__title">Card One</h2>
+      <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas porro veritatis odit ipsum.
+       Suscipit, cum!</p>
+     </figcaption>
+    </figure>
+
+    <figure class="card">
+     <span class="card__circle-filling"></span>
+     <div class="card__img-box">
+      <img src="./img/img2.jpg" alt="" class="card__img">
+     </div>
+     <figcaption class="card__content">
+      <h2 class="card__title">Card Two</h2>
+      <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas porro veritatis odit ipsum.
+       Suscipit, cum!</p>
+     </figcaption>
+    </figure>
+
+    <figure class="card">
+     <span class="card__circle-filling"></span>
+     <div class="card__img-box">
+      <img src="./img/img3.jpg" alt="" class="card__img">
+     </div>
+     <figcaption class="card__content">
+      <h2 class="card__title">Card Three</h2>
+      <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas porro veritatis odit ipsum.
+       Suscipit, cum!</p>
+     </figcaption>
+    </figure>
+
+   </div><!-- /.container -->
+
+  </section>
+
+ </main>
+ <script src="./jquery.js"></script>
+ <script>
+  $(function() {
+
+   $('.card').on('mouseenter', function(e) {
+    var x = e.pageX - $(this).offset().left,
+        y = e.pageY - $(this).offset().top;
+    $(this).find('.card__circle-filling').css({
+     left: x,
+     top: y
+    });
+   });
+
+   $('.card').on('mouseout', function(e) {
+    var x = e.pageX - $(this).offset().left,
+        y = e.pageY - $(this).offset().top;
+    $(this).find('.card__circle-filling').css({
+     left: x,
+     top: y
+    });
+   });
+
+  });
+ </script>
+</body>
+
+</html>
